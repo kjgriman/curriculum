@@ -9,6 +9,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\User;
 
 /**
  * Class HomeController
@@ -38,6 +39,7 @@ class HomeController extends Controller
     public function showCategory()
     {
         # code...
-        return view('/categoria');
+        $data= User::all();
+        return view('/categoria',compact('data'));
     }
 }
